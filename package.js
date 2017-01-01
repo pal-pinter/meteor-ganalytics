@@ -1,6 +1,6 @@
 Package.describe({
-    name: 'indesign:ganalytics',
-    version: '1.0.2',
+    name: 'palpinter:ganalytics',
+    version: '1.0.0',
     // Brief, one-line summary of the package.
     summary: 'Log page views and events to Google Analytics.',
     // URL to the Git repository containing the source code for this package.
