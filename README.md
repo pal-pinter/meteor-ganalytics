@@ -29,7 +29,7 @@ Example router code to log pageviews for routes:
 ```js
 Meteor.Router.add({
     '/': function() {
-        GAnalytics.pageview();
+        GAnalytics.pageview path, ();
         return 'home';
     }
 });
@@ -37,8 +37,8 @@ Meteor.Router.add({
 
 In your controller code:
 ```js
-GAnalytics.pageview();
-GAnalytics.pageview("/hello");
+GAnalytics.pageview path, ();
+GAnalytics.pageview path, ("/hello");
 
 
 GAnalytics.event("account", "signin");
@@ -67,4 +67,4 @@ You can also [provide options](https://developers.google.com/analytics/devguides
 
 ### Debug Mode
 
-If you pass `debug: true` as a setting, the package will output console logs on `GAnalytics.pageview()` and `GAnalytics.event()`.
+If you pass `debug: true` as a setting, the package will output console logs on `GAnalytics.pageview path, ()` and `GAnalytics.event()`.

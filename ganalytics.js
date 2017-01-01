@@ -67,6 +67,7 @@ if(Meteor.settings && Meteor.settings.public !== undefined && Meteor.settings.pu
 
 		if (!pageLocation) {
 			console.log('Error: missing pageLocation parameter')
+			return
 		}
 
 		if(pageTitle) {
