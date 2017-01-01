@@ -60,16 +60,22 @@ if(Meteor.settings && Meteor.settings.public !== undefined && Meteor.settings.pu
 		ga('require', 'linkid', 'linkid.js');
 	}
 
-	GAnalytics.pageview = function(pageTitle) {
+	GAnalytics.pageview = function(pageLocation, pageTitle) {
 		if(!!gaSettings.debug){
 			console.log("Logging pageview: "+pageLocation)
 		}
 
-		if(pageTitle) {
-			ga('set', 'title', pageTitle)
+		if (!pageLocation) {
+			console.log('Error: missing pageLocation parameter')
 		}
 
-		pageLocation = window.location.pathname;
+		if(pageTitle) {
+			ga('set', 'title', pageTitle)
+		} else {
+			console.log('Error: missing page title parameter')
+			return
+		}
+
 		ga('send', 'pageview', pageLocation);
 	}
 
