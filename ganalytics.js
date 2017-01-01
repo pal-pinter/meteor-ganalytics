@@ -60,15 +60,16 @@ if(Meteor.settings && Meteor.settings.public !== undefined && Meteor.settings.pu
 		ga('require', 'linkid', 'linkid.js');
 	}
 
-	GAnalytics.pageview = function(pageLocation) {
+	GAnalytics.pageview = function(pageTitle) {
 		if(!!gaSettings.debug){
 			console.log("Logging pageview: "+pageLocation)
 		}
 
-		if(!pageLocation) {
-			pageLocation = window.location.pathname;
+		if(pageTitle) {
+			ga('set', 'title', pageTitle)
 		}
 
+		pageLocation = window.location.pathname;
 		ga('send', 'pageview', pageLocation);
 	}
 
